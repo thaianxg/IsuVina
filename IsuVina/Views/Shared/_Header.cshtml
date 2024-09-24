@@ -1,0 +1,67 @@
+﻿<div class="top-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="logo">
+                    <a href="">
+                        <img src="~/Content/img/logo.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="user">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+                        <div class="dropdown-menu">
+                            <a href="~/Home/Login" class="dropdown-item">Login</a>
+                            <a href="~/Home/Login" class="dropdown-item">Register</a>
+                        </div>
+                    </div>
+                    @*<div class="cart" style="cursor: pointer; ">
+                    <img id="vi" style="display:block"  onclick="viFunction()" src="~/Content/img/vi.png" alt="Logo">
+                    <img id="en" style="display:none"  onclick="enFunction()" src="~/Content/img/en.gif" alt="Logo">
+                    </div>*@
+                <div class="cart" style="cursor: pointer; ">
+                    <a href="~/Home/Index/vi">
+                        <img src="~/Content/img/vi.png" alt="Logo">
+                    </a>
+                    <a href="~/Home/Index/en">
+                        <img src="~/Content/img/en.gif" alt="Logo">
+                    </a>
+                    <a href="~/Home/Index/ko">
+                        <img src="~/Content/img/ko.gif" alt="Logo">
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+//function viFunction() {
+//    var x = document.getElementById("en");
+//    var y = document.getElementById("vi");
+//  if (x.style.display === "none") {
+//      x.style.display = "block";
+//      y.style.display = "none";
+//  } else {
+//    x.style.display = "none";
+//  }
+//    }
+//function enFunction() {
+//        var x = document.getElementById("vi");
+//        var y = document.getElementById("en");
+//        if (x.style.display === "none") {
+//            x.style.display = "block";
+//            y.style.display = "none";
+//        } else {
+//            x.style.display = "none";
+//        }
+//    }
+</script>

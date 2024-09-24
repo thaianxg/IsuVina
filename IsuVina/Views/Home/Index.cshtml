@@ -1,0 +1,376 @@
+﻿@model IsuVina.Models.ListCommon
+<!-- Main Slider Start -->
+@Html.Partial("_SliderBanner")
+<!-- Main Slider End -->
+<!-- Feature Start-->
+<div class="feature">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-shield"></i>
+                    <!-- Replace with session -->
+                    @if (ViewBag.lang == "en")
+                    {
+                        <h2>Trusted Partners</h2>
+                        <p>
+                            Trusted Partners provide high quality products and satisfy customers
+                        </p>
+                    }
+                    else if (ViewBag.lang == "ko")
+                    {
+
+                         <h2>믿을 수 있는 파트너</h2>
+                         <p>
+                             고품질의 제품과 고객 만족을 제공하는 신뢰받는 파트너
+                         </p>
+
+                    }
+                    else 
+                    {
+
+                        <h2>Đối tác tin cậy</h2>
+                        <p>
+                            Đối tác tin cậy cung cấp sản phẩm chất lượng cao và làm hài lòng khách hàng
+                        </p>
+
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-shopping-bag"></i>
+                    @if (ViewBag.lang == "en")
+                    {
+                        <h2>Quality Product</h2>
+                        <p>
+                            Product quality refers to how well a product satisfies customer needs
+                        </p>
+                    }
+                    else if (ViewBag.lang == "ko")
+                    {
+                        <h2>고품질 제품</h2>
+                        <p>
+                            제품 품질은 제품이 고객 요구 사항을 얼마나 잘 충족시키는지를 나타냅니다
+                        </p>
+                    }
+                    else
+                    {
+                        <h2> Sản phẩm chất lượng </h2>
+                        <p>
+                        Chất lượng sản phẩm phản ánh mức độ đáp ứng nhu cầu của khách hàng
+                        </p>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-truck"></i>
+                    @if (ViewBag.lang == "en")
+                    {
+                        <h2>Timely shipping</h2>
+                        <p>
+
+                            Products are shipped quickly from warehouse to customer.
+                        </p>
+                    }
+                    else if (ViewBag.lang == "ko")
+                    {
+                        <h2>적시 배송</h2>
+                        <p>
+
+                            제품은 창고에서 고객에게 신속하게 배송됩니다.
+                        </p>
+                    }
+                    else
+                    {
+                        <h2> Vận chuyển kịp thời </h2>
+                        <p>
+
+                        Sản phẩm được vận chuyển nhanh chóng từ kho đến tay khách hàng
+                        </p>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-phone"></i>
+                    @if (ViewBag.lang == "en")
+                    {
+                        <h2>Telephone Support</h2>
+                        <p>
+                            Customer care and support center by phone 84-0342951025
+                        </p>
+                    }
+                    else if (ViewBag.lang == "ko")
+                    {
+                        <h2>전화 지원</h2>
+                        <p>
+                          고객 관리 및 지원 센터 전화 84-0342951025
+                        </p>
+                    }
+                    else
+                    {
+                        <h2> Hỗ trợ qua điện thoại</h2 >
+                        <p>
+                        Trung tâm hỗ trợ và chăm sóc khách hàng qua điện thoại 84 - 0342951025
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("_ModalMail")
+@Html.Partial("_Slogan")
+<!-- Category End-->
+<!-- Featured Product Start -->
+<div class="featured-product">
+    <div class="container">
+        <div class="section-header">
+            @if (ViewBag.lang == "en")
+            {
+                <h3>Construction Products</h3>
+                <p>
+                    We provide construction products for construction projects and housing projects with guaranteed quality, timely delivery and reasonable prices.
+                </p>
+            }
+            else if (ViewBag.lang == "ko")
+            {
+                <h3>건설제품</h3>
+                <p>
+                    우리는 보장된 품질, 적시 납품, 합리적인 가격으로 건설 프로젝트 및 주택 프로젝트를 위한 건설 제품을 제공합니다.
+                </p>
+            }
+            else
+            {
+                <h3> Sản phẩm xây dựng </h3 >
+                <p>
+                Chúng tôi cung cấp các sản phẩm xây dựng cho các công trình xây dựng, dự án nhà ở với chất lượng đảm bảo, giao hàng đúng tiến độ và giá cả hợp lý
+                </p>
+            }
+        </div>
+
+        <!-- Featured Construction -->
+        <div class="row align-items-center product-slider product-slider-4">
+            @foreach (var p in Model.lstConstruction)
+            {
+
+                <div class="col-lg-3">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <a href="~/Home/Product_detail/@p.Id">
+                                <img src="~/Content/img/@p.Image" alt="Product Image">
+                            </a>
+                            <div class="product-action">
+                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                <a href="#"><i class="fa fa-heart"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="title"><a href="#">@p.Name</a></div>
+                            <div class="ratting">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="price">$12 <span>$25</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="newsletter">
+    <div class="container">
+        <div class="section-header">
+            <!-- Replace with session -->
+            @if (ViewBag.lang == "en")
+            {
+                <h3>ISUVINA MRO Integrated Service</h3>
+                <p>
+                    ISUVINA's MRO Division is the first foreign-invested company to obtain a license for the distribution of MRO consumable materials from the Vietnamese government.
+                </p>
+            }
+            else if (ViewBag.lang == "ko")
+            {
+               <h3>이스비나 MRO 통합 서비스</h3>
+               <p>
+                   Isubina의 MRO 사업부는 베트남 정부로부터 MRO 소모품 유통 라이센스를 획득한 최초의 외국인 투자 기업입니다
+               </p>
+            }
+            else
+            {
+                <h3> Dịch vụ tích hợp ISUVINA MRO </h3>
+                <p>
+                Bộ phận MRO của ISUVINA là công ty có vốn đầu tư nước ngoài đầu tiên được chính phủ Việt Nam cấp giấy phép phân phối vật tư tiêu hao MRO từ chính phủ Việt Nam.
+                </p>
+            }
+        </div>
+        <div class="form">
+            <input type="email" value="Your email here">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Submit</button>
+
+        </div>
+    </div>
+</div>
+
+<div class="recent-product">
+    <div class="container">
+        <div class="section-header">
+            @if (ViewBag.lang == "en")
+            {
+                <h3>Recent Product</h3>
+                <p>
+                    The recent products are provided to customers on time with guaranteed quality and reasonable price and help customers save time, cost and risk.
+                </p>
+            }
+            else if (ViewBag.lang == "ko")
+            {
+                <h3>최근 제품</h3>
+                <p>
+                    최신 제품은 보장된 품질과 합리적인 가격으로 고객에게 적시에 제공되며 고객의 시간, 비용 및 위험을 절약하는 데 도움이 됩니다
+                </p>
+            }
+            else
+            {
+                <h3> Sản phẩm gần đây </h3>
+                <p>
+                    Các sản phẩm gần đây được cung cấp cho khách hàng đúng thời hạn với chất lượng đảm bảo và giá cả hợp lý, giúp khách hàng tiết kiệm thời gian, chi phí và rủi ro.cost and risk.
+                </p>
+            }
+        </div>
+        <!-- Featured Recent Product  -->
+        <div class="row align-items-center product-slider product-slider-4">
+            @foreach (var p in Model.lstRecentProduct)
+            {
+                <div class="col-lg-3">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <a href="~/Home/Product_detail/@p.Id">
+                                <img src="~/Content/img/@p.Image" alt="Product Image">
+                            </a>
+                            <div class="product-action">
+                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                <a href="#"><i class="fa fa-heart"></i></a>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="title"><a href="">@p.Name</a></div>
+                            <div class="ratting">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="price">$12 <span>$25</span></div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div class="brand">
+    <div class="container">
+        <div class="section-header">
+            @if (ViewBag.lang == "en")
+            {
+                <h3>Our Partners</h3>
+                <p>
+                    List of partners always accompanying our company to provide the best products for customers
+                </p>
+            }
+            else if (ViewBag.lang == "ko")
+            {
+                <h3> 우리의 파트너</h3>
+                <p>
+                    파트너 목록은 항상 우리 회사와 함께 고객에게 최고의 제품을 제공합니다
+                </p>
+            }
+            else
+            {
+                <h3> Đối tác của chúng tôi</h3>
+                <p>
+                    Danh sách đối tác luôn đồng hành cùng công ty chúng tôi để cung cấp những sản phẩm tốt nhất cho khách hàng
+                </p>
+            }
+        </div>
+
+        @Html.Partial("_Partners")
+    </div>
+</div>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+<!--@section scripts{
+    <script>-->
+@*pageNo = 0;
+    pageCount = @ViewBag.PageCount*@
+<!--pageNo = 0;
+        $(function () {
+            // Hiển thị trang đầu tiên
+           /* fnLoadPage();*/
+
+            // Hiển thị trang được yêu cầu
+            //$("ul.pager a").click(function () {
+
+            //    var href = $(this).attr("href");
+            //    eval("pageNo = (pageCount + " + href + " ) % pageCount");
+
+                fnLoadConstruction();
+
+            //    return false; // hủy thao tác click
+            //});
+        });
+
+        function fnLoadConstruction() {
+            $.ajax({
+                url: "/Home/_Construction",
+                data: { pageNo: pageNo },
+                success: function (response) {
+                    $("#ConstructionId").html(response);
+                }
+            });
+        }
+    </script>
+    <script>
+        //thietlap() ;
+        //$(function () {
+        //    setInterval(function thietlap() {
+        //        pageNo++;
+        //        $.ajax({
+        //            url: "/Home/Page",
+        //            data: { pageNo: pageNo },
+        //            success: function (response) {
+        //                $("h1#result1").html(response);
+        //            }
+        //        })
+        //    }, 5000);
+        //});
+        //function thietlap() {
+        //    pageNo++;
+        //    $.ajax({
+        //        url: "/Home/Page",
+        //        data: { pageNo: pageNo },
+        //        success: function (response) {
+        //            $("h1#result1").html(response);
+        //        }
+        //    });
+        //}
+    </script>
+}-->
